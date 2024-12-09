@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">LMS</div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#assignments">Assignments</a></li>
+                <li><a href="#profile">Profile</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="dashboard" class="dashboard">
+                <h1>Welcome to Learning Management System</h1>
+                <div class="cards-container">
+                    <div class="card">
+                        <h3>My Courses</h3>
+                        <p>View and manage your enrolled courses</p>
+                        <button onclick="loadCourses()">View Courses</button>
+                    </div>
+                    <div class="card">
+                        <h3>Assignments</h3>
+                        <p>Check your pending assignments</p>
+                        <button onclick="loadAssignments()">View Assignments</button>
+                    </div>
+                    <div class="card">
+                        <h3>Progress</h3>
+                        <p>Track your learning progress</p>
+                        <button onclick="viewProgress()">View Progress</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="courses" class="courses-section hidden">
+                <h2>My Courses</h2>
+                <div id="courses-list" class="courses-grid"></div>
+            </section>
+
+            <section id="assignments" class="assignments-section hidden">
+                <h2>Assignments</h2>
+                <div id="assignments-list" class="assignments-grid"></div>
+            </section>
+
+            <section id="profile" class="profile-section hidden">
+                <h2>User Profile</h2>
+                <div class="profile-container">
+                    <div class="profile-card">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <img id="profile-image" src="https://via.placeholder.com/150" alt="Profile Picture">
+                            </div>
+                            <div class="profile-info">
+                                <h3 id="user-name">Student Name</h3>
+                                <p id="user-email">student@example.com</p>
+                            </div>
+                        </div>
+                        <div class="profile-stats">
+                            <div class="stat-card">
+                                <h4>Enrolled Courses</h4>
+                                <p id="enrolled-courses-count">0</p>
+                            </div>
+                            <div class="stat-card">
+                                <h4>Completed Assignments</h4>
+                                <p id="completed-assignments-count">0</p>
+                            </div>
+                            <div class="stat-card">
+                                <h4>Average Grade</h4>
+                                <p id="average-grade">0%</p>
+                            </div>
+                        </div>
+                        <div class="profile-actions">
+                            <button onclick="editProfile()">Edit Profile</button>
+                            <button onclick="downloadTranscript()">Download Transcript</button>
+                        </div>
+                    </div>
+                    <div class="recent-activity">
+                        <h3>Recent Activity</h3>
+                        <div id="activity-list" class="activity-list"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="notification" class="notification"></div>
+    <script src="script.js"></script>
+</body>
+</html>
